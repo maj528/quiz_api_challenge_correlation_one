@@ -9,9 +9,7 @@ class Api::V1::CandidatesController < ApplicationController
         render json: @candidate
     end
 
- # help
     def create
-        # byebug
         @candidate = Candidate.new(candidate_params)
         if @candidate.save
             render json: @candidate
@@ -24,9 +22,6 @@ class Api::V1::CandidatesController < ApplicationController
 
     def candidate_params
         params.require(:candidate).permit(:first_name, :last_name, :email)
-
-       #params.permit(:first_name, :last_name, :email)
-
     end
 
 end
